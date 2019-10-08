@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+    <p>姓名:
+        <span ng-bind="person.firstName"></span><br>
+        <span ng-bind="person.lastName"></span><br>
+    </p>
+</div>
+</body>
+</html>

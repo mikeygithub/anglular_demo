@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Filiter</title>
+    <script src="../../node_modules/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>
+        <input type="text" ng-model="test">
+    </p>
+    <ul>
+        <li ng-repeat="x in names|filter:test | orderBy:'county'">
+            {{ (x.name|uppercase)+',' +x.country}}
+        </li>
+    </ul>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope) {
+        $scope.names = [
+            {name:'Mikey',country:'Guangxi'},
+            {name:'Hege',country:'BeiJing'},
+            {name:'Kai',country:'ShanHai'},
+        ]
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directive</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+<!--        <directive></directive>-->
+        <div directive></div>
+    </div>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.directive('directive',function () {
+            return{
+                restrict: "A",
+                template: "<h1>自定义指令</h1>"
+            }
+        })
+    </script>
+</body>
+</html>

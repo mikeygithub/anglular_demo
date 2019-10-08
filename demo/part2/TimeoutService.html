@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeoutService</title>
+    <script src="../../node_modules/angular/angular.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        {{myHeader}}
+    </div>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function ($scope,$timeout) {
+            $scope.myHeader = "Hello world";
+            $timeout(function () {
+                $scope.myHeader = "How are you today ?";
+            },2000);
+        });
+    </script>
+</body>
+</html>

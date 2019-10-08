@@ -2,24 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ConsumerFiliter</title>
+    <title>ConsumerService</title>
     <script src="../../node_modules/angular/angular.js"></script>
 </head>
 <body>
 <div ng-app="myApp" ng-controller="myCtrl">
-    姓名：{{msg|reverse}}
+    {{hex}}
 </div>
 <script>
     var app = angular.module('myApp',[]);
-    app.controller('myCtrl',function ($scope) {
-        $scope.msg = "Mikey";
-    })
 
-    app.filter('reverse',function () {
-        return function (text) {
-            return text.split("").reverse().join("");
+
+
+    app.controller('myCtrl',function ($scope,hexafy) {
+        $scope.hex = hexafy.myFun(999);
+    });
+
+    app.service('hexafy',function (){
+        this.myFun = function (x) {
+            return x.toString(16);
         }
-    })
+    });
+
+
+
 </script>
 </body>
 </html>

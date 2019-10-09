@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat</title>
+    <script src="../../node_modules/angular/angular.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <select name="" id="" ng-model="selectSite">
+            <option ng-repeat="x in sites" value="{{x.url}}">
+                {{x.site}}
+            </option>
+        </select>
+        <p>你选择的是：{{selectSite}}</p>
+    </div>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function ($scope) {
+            $scope.sites =  [
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ];
+        })
+    </script>
+</body>
+</html>
